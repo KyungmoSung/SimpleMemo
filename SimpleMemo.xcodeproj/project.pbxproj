@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		24B054C723F7F01200A092F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B054C523F7F01200A092F8 /* LaunchScreen.storyboard */; };
 		24B054D223F7F01300A092F8 /* SimpleMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B054D123F7F01300A092F8 /* SimpleMemoTests.swift */; };
 		24B054DD23F7F01300A092F8 /* SimpleMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B054DC23F7F01300A092F8 /* SimpleMemoUITests.swift */; };
+		24B054EE23F7F72800A092F8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 24B054ED23F7F72800A092F8 /* .swiftlint.yml */; };
 		3156A98074126F7ADB2FC57E /* Pods_SimpleMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B7AF5BCABA2CFDF14BC9FA /* Pods_SimpleMemo.framework */; };
 		7C4C00B17F967DA9F561D3FA /* Pods_SimpleMemo_SimpleMemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBAF5981D48E9D076686094 /* Pods_SimpleMemo_SimpleMemoUITests.framework */; };
 		E23DED6A79ECBDD9AF7DD2F9 /* Pods_SimpleMemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD4E979B7C4206DD2C0076C /* Pods_SimpleMemoTests.framework */; };
@@ -54,6 +55,7 @@
 		24B054D823F7F01300A092F8 /* SimpleMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B054DC23F7F01300A092F8 /* SimpleMemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMemoUITests.swift; sourceTree = "<group>"; };
 		24B054DE23F7F01300A092F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24B054ED23F7F72800A092F8 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../DDD/MovieConnect/.swiftlint.yml; sourceTree = "<group>"; };
 		6BD4E979B7C4206DD2C0076C /* Pods_SimpleMemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		908DFC6C9169EDEA401AD8A3 /* Pods-SimpleMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo.release.xcconfig"; path = "Target Support Files/Pods-SimpleMemo/Pods-SimpleMemo.release.xcconfig"; sourceTree = "<group>"; };
 		93D7B55AD4449A1D6AA66353 /* Pods-SimpleMemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMemoTests/Pods-SimpleMemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		24B054AE23F7F01000A092F8 = {
 			isa = PBXGroup;
 			children = (
+				24B054ED23F7F72800A092F8 /* .swiftlint.yml */,
 				24B054B923F7F01000A092F8 /* SimpleMemo */,
 				24B054D023F7F01300A092F8 /* SimpleMemoTests */,
 				24B054DB23F7F01300A092F8 /* SimpleMemoUITests */,
@@ -155,7 +158,6 @@
 				93D7B55AD4449A1D6AA66353 /* Pods-SimpleMemoTests.debug.xcconfig */,
 				DB3101B70EF9C7D2266E7AFC /* Pods-SimpleMemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -181,6 +183,7 @@
 				24B054B423F7F01000A092F8 /* Frameworks */,
 				24B054B523F7F01000A092F8 /* Resources */,
 				B1404CB399321ACA6BB35361 /* [CP] Embed Pods Frameworks */,
+				24B054EA23F7F2FC00A092F8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -278,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24B054EE23F7F72800A092F8 /* .swiftlint.yml in Resources */,
 				24B054C723F7F01200A092F8 /* LaunchScreen.storyboard in Resources */,
 				24B054C423F7F01200A092F8 /* Assets.xcassets in Resources */,
 				24B054C223F7F01000A092F8 /* Main.storyboard in Resources */,
@@ -301,6 +305,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		24B054EA23F7F2FC00A092F8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		51C29289A27977527202D057 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
