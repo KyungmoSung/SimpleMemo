@@ -74,7 +74,7 @@
                                 <rect key="frame" x="0.0" y="148.5" width="414" height="653.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="P9N-4k-iaK">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j91-GO-Xo2">
                                                 <rect key="frame" x="20" y="30" width="374" height="55"/>
@@ -137,7 +137,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwr-dN-DgN">
-                                                <rect key="frame" x="20" y="467" width="374" height="237"/>
+                                                <rect key="frame" x="20" y="467" width="374" height="157"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5i1-Dm-sSh">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="27"/>
@@ -148,43 +148,37 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L9b-dl-UFO">
-                                                        <rect key="frame" x="0.0" y="37" width="374" height="200"/>
-                                                        <subviews>
-                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAY-5E-HVa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsn-n6-Cse">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
-                                                                    </stackView>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="gsn-n6-Cse" secondAttribute="trailing" id="Bck-10-WjL"/>
-                                                                    <constraint firstItem="gsn-n6-Cse" firstAttribute="leading" secondItem="kAY-5E-HVa" secondAttribute="leading" id="GQ8-B7-MVw"/>
-                                                                    <constraint firstItem="gsn-n6-Cse" firstAttribute="top" secondItem="kAY-5E-HVa" secondAttribute="top" id="XNC-af-tD9"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="gsn-n6-Cse" secondAttribute="bottom" id="ehf-eD-8Mc"/>
-                                                                    <constraint firstItem="gsn-n6-Cse" firstAttribute="width" secondItem="kAY-5E-HVa" secondAttribute="width" id="mxr-3f-jr8"/>
-                                                                    <constraint firstItem="gsn-n6-Cse" firstAttribute="height" secondItem="kAY-5E-HVa" secondAttribute="height" id="zUb-nF-OwI"/>
-                                                                </constraints>
-                                                            </scrollView>
-                                                        </subviews>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1tD-ZA-X2d">
+                                                        <rect key="frame" x="0.0" y="37" width="374" height="120"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="kAY-5E-HVa" firstAttribute="top" secondItem="L9b-dl-UFO" secondAttribute="top" id="23P-CL-0NG"/>
-                                                            <constraint firstAttribute="height" constant="200" id="IUF-dI-lJk"/>
-                                                            <constraint firstItem="kAY-5E-HVa" firstAttribute="leading" secondItem="L9b-dl-UFO" secondAttribute="leading" id="dvM-NB-ijm"/>
-                                                            <constraint firstAttribute="trailing" secondItem="kAY-5E-HVa" secondAttribute="trailing" id="lEP-b0-oYd"/>
-                                                            <constraint firstAttribute="bottom" secondItem="kAY-5E-HVa" secondAttribute="bottom" id="oPf-NO-xgu"/>
+                                                            <constraint firstAttribute="height" constant="120" id="uIp-bi-mYG"/>
                                                         </constraints>
-                                                    </view>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SYW-Jf-6By">
+                                                            <size key="itemSize" width="120" height="120"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jBr-47-3IL">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Akc-gI-IHP">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </collectionViewCellContentView>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                    </collectionView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstItem="5i1-Dm-sSh" firstAttribute="leading" secondItem="zwr-dN-DgN" secondAttribute="leading" id="9lJ-Ng-nt7"/>
-                                                    <constraint firstAttribute="bottom" secondItem="L9b-dl-UFO" secondAttribute="bottom" id="PHo-uk-Rhv"/>
-                                                    <constraint firstAttribute="trailing" secondItem="L9b-dl-UFO" secondAttribute="trailing" id="SWd-Mi-wM0"/>
-                                                    <constraint firstItem="L9b-dl-UFO" firstAttribute="top" secondItem="5i1-Dm-sSh" secondAttribute="bottom" constant="10" id="U8O-Fw-1p4"/>
-                                                    <constraint firstItem="L9b-dl-UFO" firstAttribute="leading" secondItem="zwr-dN-DgN" secondAttribute="leading" id="bBd-Di-iAW"/>
+                                                    <constraint firstItem="1tD-ZA-X2d" firstAttribute="top" secondItem="5i1-Dm-sSh" secondAttribute="bottom" constant="10" id="I0K-aH-wUu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1tD-ZA-X2d" secondAttribute="bottom" id="IDp-lq-uVq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1tD-ZA-X2d" secondAttribute="trailing" id="MhS-QY-iZu"/>
+                                                    <constraint firstItem="1tD-ZA-X2d" firstAttribute="leading" secondItem="zwr-dN-DgN" secondAttribute="leading" id="NMW-7h-oBR"/>
                                                     <constraint firstItem="5i1-Dm-sSh" firstAttribute="top" secondItem="zwr-dN-DgN" secondAttribute="top" id="bzK-ym-m7S"/>
                                                 </constraints>
                                             </view>
@@ -242,6 +236,7 @@
                     <navigationItem key="navigationItem" title="메모 작성" id="7Br-OO-ZCB"/>
                     <connections>
                         <outlet property="contentTv" destination="eUC-JB-qKG" id="AZH-5d-ZxE"/>
+                        <outlet property="imageCollectionView" destination="1tD-ZA-X2d" id="Jcf-Le-Rd3"/>
                         <outlet property="titleTf" destination="Hpe-He-89y" id="Os8-yq-3q1"/>
                     </connections>
                 </viewController>

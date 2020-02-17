@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		247FD24423FABC4300B197DC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD24323FABC4300B197DC /* UIColorExtension.swift */; };
+		247FD24723FADA6300B197DC /* AttachImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD24523FADA6300B197DC /* AttachImageCell.swift */; };
+		247FD24823FADA6300B197DC /* AttachImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247FD24623FADA6300B197DC /* AttachImageCell.xib */; };
+		247FD24A23FADE6300B197DC /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD24923FADE6300B197DC /* ReuseIdentifying.swift */; };
+		247FD24D23FAE07E00B197DC /* AttachImageSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD24B23FAE07E00B197DC /* AttachImageSelectCell.swift */; };
+		247FD24E23FAE07E00B197DC /* AttachImageSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247FD24C23FAE07E00B197DC /* AttachImageSelectCell.xib */; };
+		247FD25123FAE6AD00B197DC /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD25023FAE6AD00B197DC /* DesignableView.swift */; };
+		247FD25423FAED1B00B197DC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247FD25323FAED1B00B197DC /* Colors.xcassets */; };
 		24B054BB23F7F01000A092F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B054BA23F7F01000A092F8 /* AppDelegate.swift */; };
 		24B054BF23F7F01000A092F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B054BE23F7F01000A092F8 /* ViewController.swift */; };
 		24B054C223F7F01000A092F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B054C023F7F01000A092F8 /* Main.storyboard */; };
@@ -52,6 +59,13 @@
 		19ED4DBA032BE74E2F597D5C /* libPods-SimpleMemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleMemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226D86D58A62030753444857 /* Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SimpleMemo-SimpleMemoUITests/Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		247FD24323FABC4300B197DC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		247FD24523FADA6300B197DC /* AttachImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachImageCell.swift; sourceTree = "<group>"; };
+		247FD24623FADA6300B197DC /* AttachImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachImageCell.xib; sourceTree = "<group>"; };
+		247FD24923FADE6300B197DC /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
+		247FD24B23FAE07E00B197DC /* AttachImageSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachImageSelectCell.swift; sourceTree = "<group>"; };
+		247FD24C23FAE07E00B197DC /* AttachImageSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachImageSelectCell.xib; sourceTree = "<group>"; };
+		247FD25023FAE6AD00B197DC /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		247FD25323FAED1B00B197DC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		24B054B723F7F01000A092F8 /* SimpleMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B054BA23F7F01000A092F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24B054BE23F7F01000A092F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,8 +133,27 @@
 			isa = PBXGroup;
 			children = (
 				247FD24323FABC4300B197DC /* UIColorExtension.swift */,
+				247FD24923FADE6300B197DC /* ReuseIdentifying.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		247FD24F23FAE64300B197DC /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				247FD25023FAE6AD00B197DC /* DesignableView.swift */,
+			);
+			path = Designable;
+			sourceTree = "<group>";
+		};
+		247FD25223FAECF500B197DC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				24B054C323F7F01200A092F8 /* Assets.xcassets */,
+				247FD25323FAED1B00B197DC /* Colors.xcassets */,
+				24B054C523F7F01200A092F8 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		24B054AE23F7F01000A092F8 = {
@@ -149,6 +182,8 @@
 		24B054B923F7F01000A092F8 /* SimpleMemo */ = {
 			isa = PBXGroup;
 			children = (
+				247FD25223FAECF500B197DC /* Resource */,
+				247FD24F23FAE64300B197DC /* Designable */,
 				247FD24223FABC3400B197DC /* Extensions */,
 				24B0551023F813B400A092F8 /* Utils */,
 				24B0550723F8062C00A092F8 /* Models */,
@@ -157,10 +192,12 @@
 				24B0551523FA8ED200A092F8 /* MemoCell.swift */,
 				24B0551623FA8ED200A092F8 /* MemoCell.xib */,
 				24B054C023F7F01000A092F8 /* Main.storyboard */,
+				247FD24523FADA6300B197DC /* AttachImageCell.swift */,
+				247FD24623FADA6300B197DC /* AttachImageCell.xib */,
+				247FD24B23FAE07E00B197DC /* AttachImageSelectCell.swift */,
+				247FD24C23FAE07E00B197DC /* AttachImageSelectCell.xib */,
 				24B0551923FAA7BF00A092F8 /* EditMemoViewController.swift */,
 				24B0551323FA8CB200A092F8 /* MemoListViewController.swift */,
-				24B054C323F7F01200A092F8 /* Assets.xcassets */,
-				24B054C523F7F01200A092F8 /* LaunchScreen.storyboard */,
 				24B054C823F7F01200A092F8 /* Info.plist */,
 			);
 			path = SimpleMemo;
@@ -340,9 +377,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				24B0550F23F812C700A092F8 /* .swiftlint.yml in Resources */,
+				247FD24E23FAE07E00B197DC /* AttachImageSelectCell.xib in Resources */,
 				24B054C723F7F01200A092F8 /* LaunchScreen.storyboard in Resources */,
 				24B054C423F7F01200A092F8 /* Assets.xcassets in Resources */,
 				24B0551823FA8ED200A092F8 /* MemoCell.xib in Resources */,
+				247FD25423FAED1B00B197DC /* Colors.xcassets in Resources */,
+				247FD24823FADA6300B197DC /* AttachImageCell.xib in Resources */,
 				24B054C223F7F01000A092F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,11 +498,15 @@
 				24B0551A23FAA7BF00A092F8 /* EditMemoViewController.swift in Sources */,
 				24B054BB23F7F01000A092F8 /* AppDelegate.swift in Sources */,
 				24B0550923F8063B00A092F8 /* Memo.swift in Sources */,
+				247FD25123FAE6AD00B197DC /* DesignableView.swift in Sources */,
 				24B0550B23F8064400A092F8 /* Image.swift in Sources */,
 				24B0550D23F809BE00A092F8 /* Category.swift in Sources */,
 				24B0551423FA8CB200A092F8 /* MemoListViewController.swift in Sources */,
+				247FD24A23FADE6300B197DC /* ReuseIdentifying.swift in Sources */,
 				247FD24423FABC4300B197DC /* UIColorExtension.swift in Sources */,
+				247FD24D23FAE07E00B197DC /* AttachImageSelectCell.swift in Sources */,
 				24B0551223F813D200A092F8 /* RealmManager.swift in Sources */,
+				247FD24723FADA6300B197DC /* AttachImageCell.swift in Sources */,
 				24B0551723FA8ED200A092F8 /* MemoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
