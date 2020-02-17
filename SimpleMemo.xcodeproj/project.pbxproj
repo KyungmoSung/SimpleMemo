@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		247FD24423FABC4300B197DC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD24323FABC4300B197DC /* UIColorExtension.swift */; };
 		24B054BB23F7F01000A092F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B054BA23F7F01000A092F8 /* AppDelegate.swift */; };
 		24B054BF23F7F01000A092F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B054BE23F7F01000A092F8 /* ViewController.swift */; };
 		24B054C223F7F01000A092F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B054C023F7F01000A092F8 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		0EB6A4DF6143B3320D7C74BF /* Pods-SimpleMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMemo/Pods-SimpleMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		19ED4DBA032BE74E2F597D5C /* libPods-SimpleMemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleMemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226D86D58A62030753444857 /* Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SimpleMemo-SimpleMemoUITests/Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		247FD24323FABC4300B197DC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		24B054B723F7F01000A092F8 /* SimpleMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B054BA23F7F01000A092F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24B054BE23F7F01000A092F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		247FD24223FABC3400B197DC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				247FD24323FABC4300B197DC /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		24B054AE23F7F01000A092F8 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		24B054B923F7F01000A092F8 /* SimpleMemo */ = {
 			isa = PBXGroup;
 			children = (
+				247FD24223FABC3400B197DC /* Extensions */,
 				24B0551023F813B400A092F8 /* Utils */,
 				24B0550723F8062C00A092F8 /* Models */,
 				24B054BA23F7F01000A092F8 /* AppDelegate.swift */,
@@ -450,6 +461,7 @@
 				24B0550B23F8064400A092F8 /* Image.swift in Sources */,
 				24B0550D23F809BE00A092F8 /* Category.swift in Sources */,
 				24B0551423FA8CB200A092F8 /* MemoListViewController.swift in Sources */,
+				247FD24423FABC4300B197DC /* UIColorExtension.swift in Sources */,
 				24B0551223F813D200A092F8 /* RealmManager.swift in Sources */,
 				24B0551723FA8ED200A092F8 /* MemoCell.swift in Sources */,
 			);
