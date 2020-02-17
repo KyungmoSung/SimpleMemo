@@ -28,4 +28,12 @@ extension UIColor {
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
+  
+    @objc class var lightGreyBackground: UIColor {
+        if #available(iOS 11.0, *) {
+            return UIColor(named: "lightGreyBackground")!
+        } else {
+            return UIColor(hexString: "#EAEAEA")
+        }
+    }
 }
