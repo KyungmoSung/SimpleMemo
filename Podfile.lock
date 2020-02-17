@@ -5,11 +5,13 @@ PODS:
   - Realm/Headers (4.3.2)
   - RealmSwift (4.3.2):
     - Realm (= 4.3.2)
+  - SnapKit (5.0.1)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - Nuke (~> 8.0)
   - RealmSwift
+  - SnapKit (~> 5.0.0)
   - SwiftLint
 
 SPEC REPOS:
@@ -17,14 +19,16 @@ SPEC REPOS:
     - Nuke
     - Realm
     - RealmSwift
+    - SnapKit
     - SwiftLint
 
 SPEC CHECKSUMS:
   Nuke: fa6f784c4f7e1c0f9313668510186c68b7af2509
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 8c88ffa62b874e4676e722ae39662107cfaa3541
+PODFILE CHECKSUM: 16c7b74b9de2e4345cdce80df5d46580803be31b
 
 COCOAPODS: 1.8.4

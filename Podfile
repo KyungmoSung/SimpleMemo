@@ -10,6 +10,7 @@ target 'SimpleMemo' do
   pod 'RealmSwift'
   pod 'SwiftLint'
   pod 'Nuke', '~> 8.0'
+  pod 'SnapKit', '~> 5.0.0'
 
   target 'SimpleMemoTests' do
     inherit! :search_paths
