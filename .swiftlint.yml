@@ -2,6 +2,7 @@ disabled_rules:
 - redundant_optional_initialization
 - trailing_whitespace
 - force_try
+- identifier_name
 
 line_length:
   ignores_comments: true

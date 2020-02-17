@@ -26,23 +26,32 @@ class EditMemoViewController: UIViewController {
     contentTv.text = "내용을 입력하세요"
     contentTv.textColor = UIColor.lightGray
   }
-  
+
   /// 메모 저장
   @IBAction func didTapSaveBtn(_ sender: Any) {
-    guard let title = titleTf.text else { // 제목 미입력
+    guard let title = titleTf.text, !title.isEmpty else { // 제목 미입력
+      presentFailAlert(message: "제목을 입력해주세요")
       return
     }
     guard let content = contentTv.text else { // 내용 미입력
+      presentFailAlert(message: "내용을 입력해주세요")
       return
     }
-    
+
     let memo = Memo()
     memo.title = title
     memo.content = content
-    
+
     RealmManager.shared.add([memo])
-    
+
     navigationController?.popViewController(animated: true)
+  }
+  
+  func presentFailAlert(message: String) {
+    let alert = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
+    let action = UIAlertAction(title: "닫기", style: .cancel, handler: nil)
+    alert.addAction(action)
+    present(alert, animated: true, completion: nil)
   }
 }
 
