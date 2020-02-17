@@ -5,6 +5,7 @@ disabled_rules:
 
 line_length:
   ignores_comments: true
+  ignores_function_declarations: true
 
 excluded:
 - Pods
