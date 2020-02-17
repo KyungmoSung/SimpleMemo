@@ -1,4 +1,5 @@
 PODS:
+  - Nuke (8.4.0)
   - Realm (4.3.2):
     - Realm/Headers (= 4.3.2)
   - Realm/Headers (4.3.2)
@@ -7,20 +8,23 @@ PODS:
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
+  - Nuke (~> 8.0)
   - RealmSwift
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - Nuke
     - Realm
     - RealmSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Nuke: fa6f784c4f7e1c0f9313668510186c68b7af2509
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: acf22c2043d801b6bbc6dc49652c52a5db3f6ddd
+PODFILE CHECKSUM: 8c88ffa62b874e4676e722ae39662107cfaa3541
 
 COCOAPODS: 1.8.4
