@@ -19,6 +19,10 @@
 		24B0550D23F809BE00A092F8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0550C23F809BE00A092F8 /* Category.swift */; };
 		24B0550F23F812C700A092F8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 24B0550E23F812C700A092F8 /* .swiftlint.yml */; };
 		24B0551223F813D200A092F8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551123F813D200A092F8 /* RealmManager.swift */; };
+		24B0551423FA8CB200A092F8 /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551323FA8CB200A092F8 /* MemoListViewController.swift */; };
+		24B0551723FA8ED200A092F8 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551523FA8ED200A092F8 /* MemoCell.swift */; };
+		24B0551823FA8ED200A092F8 /* MemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B0551623FA8ED200A092F8 /* MemoCell.xib */; };
+		24B0551A23FAA7BF00A092F8 /* EditMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551923FAA7BF00A092F8 /* EditMemoViewController.swift */; };
 		2601FDDBBA06F5C328A7BB10 /* libPods-SimpleMemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19ED4DBA032BE74E2F597D5C /* libPods-SimpleMemoTests.a */; };
 		CE4FFD032C75E345326801CD /* libPods-SimpleMemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9BC1ADFFCDE0FC17418397 /* libPods-SimpleMemo.a */; };
 		EFF6EE5DEF41394362397DF3 /* libPods-SimpleMemo-SimpleMemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0571FCCECC3A5158ED459C97 /* libPods-SimpleMemo-SimpleMemoUITests.a */; };
@@ -70,6 +74,10 @@
 		24B0550C23F809BE00A092F8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		24B0550E23F812C700A092F8 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		24B0551123F813D200A092F8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		24B0551323FA8CB200A092F8 /* MemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
+		24B0551523FA8ED200A092F8 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		24B0551623FA8ED200A092F8 /* MemoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoCell.xib; sourceTree = "<group>"; };
+		24B0551923FAA7BF00A092F8 /* EditMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoViewController.swift; sourceTree = "<group>"; };
 		908DFC6C9169EDEA401AD8A3 /* Pods-SimpleMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo.release.xcconfig"; path = "Target Support Files/Pods-SimpleMemo/Pods-SimpleMemo.release.xcconfig"; sourceTree = "<group>"; };
 		93D7B55AD4449A1D6AA66353 /* Pods-SimpleMemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMemoTests/Pods-SimpleMemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA82FAC892BE1C82C2B58AB0 /* Pods-SimpleMemo-SimpleMemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo-SimpleMemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMemo-SimpleMemoUITests/Pods-SimpleMemo-SimpleMemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,7 +143,11 @@
 				24B0550723F8062C00A092F8 /* Models */,
 				24B054BA23F7F01000A092F8 /* AppDelegate.swift */,
 				24B054BE23F7F01000A092F8 /* ViewController.swift */,
+				24B0551523FA8ED200A092F8 /* MemoCell.swift */,
+				24B0551623FA8ED200A092F8 /* MemoCell.xib */,
 				24B054C023F7F01000A092F8 /* Main.storyboard */,
+				24B0551923FAA7BF00A092F8 /* EditMemoViewController.swift */,
+				24B0551323FA8CB200A092F8 /* MemoListViewController.swift */,
 				24B054C323F7F01200A092F8 /* Assets.xcassets */,
 				24B054C523F7F01200A092F8 /* LaunchScreen.storyboard */,
 				24B054C823F7F01200A092F8 /* Info.plist */,
@@ -319,6 +331,7 @@
 				24B0550F23F812C700A092F8 /* .swiftlint.yml in Resources */,
 				24B054C723F7F01200A092F8 /* LaunchScreen.storyboard in Resources */,
 				24B054C423F7F01200A092F8 /* Assets.xcassets in Resources */,
+				24B0551823FA8ED200A092F8 /* MemoCell.xib in Resources */,
 				24B054C223F7F01000A092F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,11 +444,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				24B054BF23F7F01000A092F8 /* ViewController.swift in Sources */,
+				24B0551A23FAA7BF00A092F8 /* EditMemoViewController.swift in Sources */,
 				24B054BB23F7F01000A092F8 /* AppDelegate.swift in Sources */,
 				24B0550923F8063B00A092F8 /* Memo.swift in Sources */,
 				24B0550B23F8064400A092F8 /* Image.swift in Sources */,
 				24B0550D23F809BE00A092F8 /* Category.swift in Sources */,
+				24B0551423FA8CB200A092F8 /* MemoListViewController.swift in Sources */,
 				24B0551223F813D200A092F8 /* RealmManager.swift in Sources */,
+				24B0551723FA8ED200A092F8 /* MemoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
