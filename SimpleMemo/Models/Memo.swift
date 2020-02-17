@@ -16,4 +16,11 @@ class Memo: Object {
   @objc dynamic var category: Category? = nil
   @objc dynamic var createDate: Date = Date()
   @objc dynamic var updateDate: Date = Date()
+  
+  convenience init(title: String, content: String, images: [Image]) {
+      self.init()
+      self.title = title
+      self.content = content
+      self.images.append(objectsIn: images)
+  }
 }

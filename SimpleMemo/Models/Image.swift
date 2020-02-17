@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-enum Type: Int {
+@objc enum Type: Int {
   case url
   case camera
   case album

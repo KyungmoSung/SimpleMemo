@@ -17,6 +17,10 @@ class RealmManager {
   private init() {
      realm = try! Realm()
   }
+
+  func objects<Element: Object>(_ type: Element.Type) -> Results<Element>{
+    return realm.objects(type)
+  }
   
   func add(_ objects: [Object]) {
     try? realm.write {
