@@ -9,23 +9,25 @@
 import UIKit
 import Nuke
 
-protocol AttachImageCellDelegate {
-  func attachImageCell(_ attachImageCell: AttachImageCell, didDeleteItemAt indexPath: IndexPath) // 셀 삭제 버튼 클릭시
+protocol AttachImageCellDelegate: class {
+  func attachImageCell(_ attachImageCell: AttachImageCell, didDeleteImage image: Image) // 셀 삭제 버튼 클릭시
 }
 
 class AttachImageCell: UICollectionViewCell, ReuseIdentifying {
-
-  @IBOutlet var thubnailLb: UILabel!
   @IBOutlet var attachIv: UIImageView!
-
-  var indexPath: IndexPath?
-  var delegate: AttachImageCellDelegate?
+  @IBOutlet var thumbnailMarkView: DesignableView!
+  
+  weak var delegate: AttachImageCellDelegate?
+  var image: Image?
 
   override func awakeFromNib() {
     super.awakeFromNib()
   }
 
-  func bind(image: Image, indexPath: IndexPath) {
+  func bind(image: Image, isThumbnail: Bool) {
+    self.image = image
+    thumbnailMarkView.isHidden = !isThumbnail
+
     switch image.type {
     case .album,
        .camera:
@@ -45,9 +47,9 @@ class AttachImageCell: UICollectionViewCell, ReuseIdentifying {
 
   /// 삭제 버튼 클릭시 Delegate 전달
   @IBAction func didTapDeleteBtn(_ sender: Any) {
-    guard let indexPath = indexPath else {
+    guard let image = image else {
       return
     }
-    delegate?.attachImageCell(self, didDeleteItemAt: indexPath)
+    delegate?.attachImageCell(self, didDeleteImage: image)
   }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     
-    // 16진수 Color코드 적용
+    /// 16진수 Color코드 적용
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()

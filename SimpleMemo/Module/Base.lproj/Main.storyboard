@@ -74,13 +74,13 @@
                                 <rect key="frame" x="0.0" y="148.5" width="414" height="653.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="P9N-4k-iaK">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="684"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j91-GO-Xo2">
-                                                <rect key="frame" x="20" y="30" width="374" height="55"/>
+                                                <rect key="frame" x="0.0" y="30" width="414" height="55"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKG-eK-X2B">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="27"/>
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="HTE-LZ-Xhf"/>
                                                         </constraints>
@@ -89,7 +89,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-He-89y">
-                                                        <rect key="frame" x="0.0" y="37" width="374" height="18"/>
+                                                        <rect key="frame" x="20" y="37" width="374" height="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -97,20 +97,20 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Hpe-He-89y" secondAttribute="trailing" id="4hC-Hr-2wE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Hpe-He-89y" secondAttribute="trailing" constant="20" id="4hC-Hr-2wE"/>
                                                     <constraint firstAttribute="bottom" secondItem="Hpe-He-89y" secondAttribute="bottom" id="5Ss-T7-5VO"/>
                                                     <constraint firstItem="Hpe-He-89y" firstAttribute="top" secondItem="DKG-eK-X2B" secondAttribute="bottom" constant="10" id="Jkw-am-kGx"/>
-                                                    <constraint firstItem="DKG-eK-X2B" firstAttribute="leading" secondItem="j91-GO-Xo2" secondAttribute="leading" id="Xwc-zU-FRm"/>
-                                                    <constraint firstItem="Hpe-He-89y" firstAttribute="leading" secondItem="j91-GO-Xo2" secondAttribute="leading" id="ess-NO-SCI"/>
+                                                    <constraint firstItem="DKG-eK-X2B" firstAttribute="leading" secondItem="j91-GO-Xo2" secondAttribute="leading" constant="20" id="Xwc-zU-FRm"/>
+                                                    <constraint firstItem="Hpe-He-89y" firstAttribute="leading" secondItem="j91-GO-Xo2" secondAttribute="leading" constant="20" id="ess-NO-SCI"/>
                                                     <constraint firstItem="DKG-eK-X2B" firstAttribute="top" secondItem="j91-GO-Xo2" secondAttribute="top" id="gov-mi-ufn"/>
-                                                    <constraint firstAttribute="trailing" secondItem="DKG-eK-X2B" secondAttribute="trailing" id="qDY-k0-fgE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DKG-eK-X2B" secondAttribute="trailing" constant="20" id="qDY-k0-fgE"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upn-3P-ye3">
-                                                <rect key="frame" x="20" y="125" width="374" height="302"/>
+                                                <rect key="frame" x="0.0" y="125" width="414" height="302"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ck-Ud-9gK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="27"/>
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="0fq-S8-3m9"/>
                                                         </constraints>
@@ -119,7 +119,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="내용을 입력하세요" translatesAutoresizingMaskIntoConstraints="NO" id="eUC-JB-qKG">
-                                                        <rect key="frame" x="0.0" y="37" width="374" height="265"/>
+                                                        <rect key="frame" x="20" y="37" width="374" height="265"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -128,19 +128,19 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="eUC-JB-qKG" secondAttribute="bottom" id="3QS-yb-cZl"/>
-                                                    <constraint firstItem="6ck-Ud-9gK" firstAttribute="leading" secondItem="upn-3P-ye3" secondAttribute="leading" id="769-kR-gjG"/>
-                                                    <constraint firstItem="eUC-JB-qKG" firstAttribute="leading" secondItem="upn-3P-ye3" secondAttribute="leading" id="7TX-u0-g9J"/>
-                                                    <constraint firstAttribute="trailing" secondItem="6ck-Ud-9gK" secondAttribute="trailing" id="DcD-F9-eqy"/>
-                                                    <constraint firstAttribute="trailing" secondItem="eUC-JB-qKG" secondAttribute="trailing" id="dsb-gt-zr8"/>
+                                                    <constraint firstItem="6ck-Ud-9gK" firstAttribute="leading" secondItem="upn-3P-ye3" secondAttribute="leading" constant="20" id="769-kR-gjG"/>
+                                                    <constraint firstItem="eUC-JB-qKG" firstAttribute="leading" secondItem="upn-3P-ye3" secondAttribute="leading" constant="20" id="7TX-u0-g9J"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6ck-Ud-9gK" secondAttribute="trailing" constant="20" id="DcD-F9-eqy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eUC-JB-qKG" secondAttribute="trailing" constant="20" id="dsb-gt-zr8"/>
                                                     <constraint firstItem="6ck-Ud-9gK" firstAttribute="top" secondItem="upn-3P-ye3" secondAttribute="top" id="l0T-43-jGw"/>
                                                     <constraint firstItem="eUC-JB-qKG" firstAttribute="top" secondItem="6ck-Ud-9gK" secondAttribute="bottom" constant="10" id="w6g-No-waC"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwr-dN-DgN">
-                                                <rect key="frame" x="20" y="467" width="374" height="157"/>
+                                                <rect key="frame" x="0.0" y="467" width="414" height="187"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5i1-Dm-sSh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="27"/>
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="YwJ-kB-Jt3"/>
                                                         </constraints>
@@ -148,21 +148,21 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1tD-ZA-X2d">
-                                                        <rect key="frame" x="0.0" y="37" width="374" height="120"/>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1tD-ZA-X2d">
+                                                        <rect key="frame" x="0.0" y="37" width="414" height="150"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="120" id="uIp-bi-mYG"/>
+                                                            <constraint firstAttribute="height" constant="150" id="uIp-bi-mYG"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SYW-Jf-6By">
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="16" minimumInteritemSpacing="16" id="SYW-Jf-6By">
                                                             <size key="itemSize" width="120" height="120"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jBr-47-3IL">
-                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                                <rect key="frame" x="8" y="15" width="120" height="120"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Akc-gI-IHP">
                                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -174,7 +174,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="5i1-Dm-sSh" firstAttribute="leading" secondItem="zwr-dN-DgN" secondAttribute="leading" id="9lJ-Ng-nt7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5i1-Dm-sSh" secondAttribute="trailing" constant="20" id="3qL-zY-Vbs"/>
+                                                    <constraint firstItem="5i1-Dm-sSh" firstAttribute="leading" secondItem="zwr-dN-DgN" secondAttribute="leading" constant="20" id="9lJ-Ng-nt7"/>
                                                     <constraint firstItem="1tD-ZA-X2d" firstAttribute="top" secondItem="5i1-Dm-sSh" secondAttribute="bottom" constant="10" id="I0K-aH-wUu"/>
                                                     <constraint firstAttribute="bottom" secondItem="1tD-ZA-X2d" secondAttribute="bottom" id="IDp-lq-uVq"/>
                                                     <constraint firstAttribute="trailing" secondItem="1tD-ZA-X2d" secondAttribute="trailing" id="MhS-QY-iZu"/>
@@ -183,7 +184,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <edgeInsets key="layoutMargins" top="30" left="20" bottom="30" right="20"/>
+                                        <edgeInsets key="layoutMargins" top="30" left="0.0" bottom="30" right="0.0"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>

@@ -18,20 +18,24 @@ class RealmManager {
      realm = try! Realm()
   }
 
-  func objects<Element: Object>(_ type: Element.Type) -> Results<Element>{
+  /// 데이터 로드
+  func objects<Element: Object>(_ type: Element.Type) -> Results<Element> {
     return realm.objects(type)
   }
   
+  /// 데이터 추가
   func add(_ objects: [Object]) {
     try? realm.write {
       realm.add(objects)
     }
   }
 
+  /// 데이터 수정
   func update(_ block: @escaping() -> Void) {
     try? realm.write(block)
   }
 
+  /// 데이터 삭제
   func delete(_ items: [Object]) {
     try? realm.write {
       realm.delete(items)
