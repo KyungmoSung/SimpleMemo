@@ -21,7 +21,7 @@ class MemoCell: UICollectionViewCell {
   func bind(memo: Memo) {
     if let image = memo.images.first {
       switch image.type {
-      case .album, .camera:
+      case .data:
         if let imageData = image.data {
           thumbnailIv.image = UIImage(data: imageData)
         }

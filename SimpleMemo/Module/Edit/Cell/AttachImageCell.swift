@@ -29,8 +29,7 @@ class AttachImageCell: UICollectionViewCell, ReuseIdentifying {
     thumbnailMarkView.isHidden = !isThumbnail
 
     switch image.type {
-    case .album,
-       .camera:
+    case .data:
       if let imageData = image.data {
         attachIv.image = UIImage(data: imageData)
       }

@@ -61,6 +61,7 @@ class EditMemoViewController: UIViewController {
     let memo = Memo()
     memo.title = title
     memo.content = content
+    memo.images.append(objectsIn: images)
 
     RealmManager.shared.add([memo])
 
@@ -161,13 +162,14 @@ extension EditMemoViewController: UICollectionViewDelegate {
           textField.placeholder = "https://example.com/image.png"
         }
 
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self, weak inputAlert] (_) in
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: { [weak self, weak inputAlert] (_) in
           // 유효한 URL인지 확인
           if let urlText = inputAlert?.textFields?[0].text,
             let url = URL(string: urlText),
             UIApplication.shared.canOpenURL(url) {
 
-            let image = Image(type: .url, url: urlText)
+            let image = Image()
+            image.url = urlText
             self?.images.append(image)
 
             self?.imageCollectionView.reloadData()
@@ -175,8 +177,10 @@ extension EditMemoViewController: UICollectionViewDelegate {
             self?.presentFailAlert(message: "올바른 이미지 URL이 아닙니다")
           }
         })
-
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
         inputAlert.addAction(okAction)
+        inputAlert.addAction(cancelAction)
 
         self.present(inputAlert, animated: true, completion: nil)
       }
@@ -226,18 +230,9 @@ extension EditMemoViewController: UIImagePickerControllerDelegate, UINavigationC
     }
 
     if let pickedImage = pickedImage {
-      var image: Image
-
-      // 이미지 타입 지정
-      switch picker.sourceType {
-      case .photoLibrary, .savedPhotosAlbum:
-        image = Image(type: .album, data: pickedImage.pngData())
-      case .camera:
-        image = Image(type: .camera, data: pickedImage.pngData())
-      @unknown default:
-        fatalError()
-      }
-
+      var image = Image()
+      image.data = pickedImage.pngData()
+      
       images.append(image)
       imageCollectionView.reloadData()
     }

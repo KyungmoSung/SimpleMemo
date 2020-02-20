@@ -9,21 +9,15 @@
 import Foundation
 import RealmSwift
 
-@objc enum Type: Int {
-  case url
-  case camera
-  case album
-}
-
 class Image: Object {
   @objc dynamic var data: Data? = nil // optionals supported
   @objc dynamic var url: String? = nil
-  dynamic var type: Type = .album
-
-  convenience init(type: Type, data: Data? = nil, url: String? = nil) {
-    self.init()
-    self.type = type
-    self.data = data
-    self.url = url
+  
+  enum `Type` {
+    case url
+    case data
+  }
+  var type: Type {
+    return (data != nil) ? .data : .url
   }
 }
