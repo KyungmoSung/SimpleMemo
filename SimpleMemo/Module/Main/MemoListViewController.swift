@@ -11,19 +11,37 @@ import RealmSwift
 
 class MemoListViewController: UIViewController {
   @IBOutlet var memoCollectionView: UICollectionView!
-
-  var memos: Results<Memo>?
+  @IBOutlet var changeGridStyleBarBtn: UIBarButtonItem!
   
+  var numberOfItemInRow = 3
+  
+  var memos: Results<Memo>?
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    memos = RealmManager.shared.objects(Memo.self)
-
     memoCollectionView.delegate = self
     memoCollectionView.dataSource = self
-    
-    let memoCellNib = UINib(nibName: "MemoCell", bundle: nil)
-    memoCollectionView.register(memoCellNib, forCellWithReuseIdentifier: "MemoCell")
+
+    let memoCellNib = UINib(nibName: MemoCell.nibName, bundle: nil)
+    memoCollectionView.register(memoCellNib, forCellWithReuseIdentifier: MemoCell.reuseIdentifier)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    memos = RealmManager.shared.objects(Memo.self)
+    memoCollectionView.reloadData()
+  }
+  
+  @IBAction func didTapChangeGridStyleBarBtn(_ sender: Any) {
+    if numberOfItemInRow <= 1 { // 한줄에 최대 3개까지
+      numberOfItemInRow = 3
+    } else {
+      numberOfItemInRow -= 1
+    }
+    self.memoCollectionView.performBatchUpdates({ [weak self] in
+      self?.memoCollectionView.reloadData()
+      
+    }, completion: nil)
   }
 }
 
@@ -34,17 +52,16 @@ extension MemoListViewController: UICollectionViewDelegate {
     }
     print(memo)
   }
-
 }
 
 extension MemoListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     guard let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout else {
-       return CGSize.zero
+        return CGSize.zero
     }
-    
-    let value = (collectionView.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right + flowLayout.minimumInteritemSpacing)) / 2
-    return CGSize(width: value, height: value)
+    let totalMinimumInteritemSpacing = (numberOfItemInRow > 1) ? (flowLayout.minimumInteritemSpacing * CGFloat(numberOfItemInRow)) : 0 // 전체 셀 간의 간격
+    let value = (collectionView.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right + totalMinimumInteritemSpacing)) / CGFloat(numberOfItemInRow)
+    return CGSize(width: value, height: value * 7 / 5)
   }
 }
 
@@ -54,7 +71,7 @@ extension MemoListViewController: UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemoCell", for: indexPath) as? MemoCell else {
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MemoCell.reuseIdentifier, for: indexPath) as? MemoCell else {
       fatalError()
     }
     if let memo = memos?[indexPath.row] {
