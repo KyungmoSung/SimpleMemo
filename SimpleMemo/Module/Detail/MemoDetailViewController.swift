@@ -77,6 +77,8 @@ class MemoDetailViewController: UIViewController {
 
     let attachImageSelectCellNib = UINib(nibName: AttachImageSelectCell.nibName, bundle: nil)
     imageCollectionView.register(attachImageSelectCellNib, forCellWithReuseIdentifier: AttachImageSelectCell.reuseIdentifier)
+    
+    hideKeyboardWhenTappedAround()
   }
 
   /// 뷰 타입에 따라 UI 세팅

@@ -34,6 +34,7 @@
 		24B0551723FA8ED200A092F8 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551523FA8ED200A092F8 /* MemoCell.swift */; };
 		24B0551823FA8ED200A092F8 /* MemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B0551623FA8ED200A092F8 /* MemoCell.xib */; };
 		24B0551A23FAA7BF00A092F8 /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551923FAA7BF00A092F8 /* MemoDetailViewController.swift */; };
+		24BCD7192401B33C000440F2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BCD7182401B33C000440F2 /* UIViewControllerExtension.swift */; };
 		2601FDDBBA06F5C328A7BB10 /* libPods-SimpleMemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19ED4DBA032BE74E2F597D5C /* libPods-SimpleMemoTests.a */; };
 		CE4FFD032C75E345326801CD /* libPods-SimpleMemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9BC1ADFFCDE0FC17418397 /* libPods-SimpleMemo.a */; };
 		EFF6EE5DEF41394362397DF3 /* libPods-SimpleMemo-SimpleMemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0571FCCECC3A5158ED459C97 /* libPods-SimpleMemo-SimpleMemoUITests.a */; };
@@ -100,6 +101,7 @@
 		24B0551523FA8ED200A092F8 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		24B0551623FA8ED200A092F8 /* MemoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoCell.xib; sourceTree = "<group>"; };
 		24B0551923FAA7BF00A092F8 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
+		24BCD7182401B33C000440F2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		908DFC6C9169EDEA401AD8A3 /* Pods-SimpleMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo.release.xcconfig"; path = "Target Support Files/Pods-SimpleMemo/Pods-SimpleMemo.release.xcconfig"; sourceTree = "<group>"; };
 		93D7B55AD4449A1D6AA66353 /* Pods-SimpleMemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMemoTests/Pods-SimpleMemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA82FAC892BE1C82C2B58AB0 /* Pods-SimpleMemo-SimpleMemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo-SimpleMemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMemo-SimpleMemoUITests/Pods-SimpleMemo-SimpleMemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,10 +140,11 @@
 		247FD24223FABC3400B197DC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				24BCD7182401B33C000440F2 /* UIViewControllerExtension.swift */,
 				2490CDC524011242001EA159 /* UIStoryboardExtension.swift */,
 				247FD24323FABC4300B197DC /* UIColorExtension.swift */,
-				247FD24923FADE6300B197DC /* ReuseIdentifying.swift */,
 				24355FEC2401202300E33D0D /* StringExtension.swift */,
+				247FD24923FADE6300B197DC /* ReuseIdentifying.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				24B054BB23F7F01000A092F8 /* AppDelegate.swift in Sources */,
 				24355FED2401202300E33D0D /* StringExtension.swift in Sources */,
 				24B0550923F8063B00A092F8 /* Memo.swift in Sources */,
+				24BCD7192401B33C000440F2 /* UIViewControllerExtension.swift in Sources */,
 				247FD25123FAE6AD00B197DC /* DesignableView.swift in Sources */,
 				24B0550B23F8064400A092F8 /* Image.swift in Sources */,
 				24B0550D23F809BE00A092F8 /* Category.swift in Sources */,
