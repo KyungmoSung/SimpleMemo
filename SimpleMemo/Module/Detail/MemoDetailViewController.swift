@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class MemoDetailViewController: UIViewController {
   private enum Constants {
@@ -200,8 +201,10 @@ extension MemoDetailViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     switch indexPath.section {
     case 0: // 등록된 이미지 셀 섹션
-      // TODO: 이미지 확대 보여주기
-      ()
+      let imageSlider = ImageSliderViewController()
+      imageSlider.images = Array(images)
+      imageSlider.displayIndex = indexPath.row
+      navigationController?.pushViewController(imageSlider, animated: true)
     case 1: // 이미지 첨부 셀 섹션
       let alert = UIAlertController(title: "AttachImage".localized, message: "SelectAttachType".localized, preferredStyle: .actionSheet)
 

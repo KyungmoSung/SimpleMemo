@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24355FEB24011FA200E33D0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24355FEA24011FA200E33D0D /* Localizable.strings */; };
 		24355FED2401202300E33D0D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24355FEC2401202300E33D0D /* StringExtension.swift */; };
+		24355FF02401247400E33D0D /* ImageSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24355FEE2401247400E33D0D /* ImageSliderViewController.swift */; };
 		247FD24423FABC4300B197DC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD24323FABC4300B197DC /* UIColorExtension.swift */; };
 		247FD24723FADA6300B197DC /* AttachImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD24523FADA6300B197DC /* AttachImageCell.swift */; };
 		247FD24823FADA6300B197DC /* AttachImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247FD24623FADA6300B197DC /* AttachImageCell.xib */; };
@@ -62,6 +63,7 @@
 		226D86D58A62030753444857 /* Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SimpleMemo-SimpleMemoUITests/Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		24355FEA24011FA200E33D0D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		24355FEC2401202300E33D0D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		24355FEE2401247400E33D0D /* ImageSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderViewController.swift; sourceTree = "<group>"; };
 		247FD24323FABC4300B197DC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		247FD24523FADA6300B197DC /* AttachImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachImageCell.swift; sourceTree = "<group>"; };
 		247FD24623FADA6300B197DC /* AttachImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachImageCell.xib; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				247FD25023FAE6AD00B197DC /* DesignableView.swift */,
+				24355FEE2401247400E33D0D /* ImageSliderViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				24B0551223F813D200A092F8 /* RealmManager.swift in Sources */,
 				247FD24723FADA6300B197DC /* AttachImageCell.swift in Sources */,
 				24B0551723FA8ED200A092F8 /* MemoCell.swift in Sources */,
+				24355FF02401247400E33D0D /* ImageSliderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
