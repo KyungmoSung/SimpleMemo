@@ -311,15 +311,18 @@ extension MemoDetailViewController: UICollectionViewDelegate {
 
         let okAction = UIAlertAction(title: "OK".localized, style: .default, handler: { [weak self, weak inputAlert] (_) in
           // 유효한 URL인지 확인
-          if let urlText = inputAlert?.textFields?[0].text,
-            let url = URL(string: urlText),
-            UIApplication.shared.canOpenURL(url) {
-
-            let image = Image()
-            image.url = urlText
-            self?.images.append(image)
-
-            self?.imageCollectionView.reloadData()
+          if let urlText = inputAlert?.textFields?[0].text, let url = URL(string: urlText) {
+            ImagePipeline.shared.loadImage(with: url) { result in
+              switch result {
+              case .success: // 이미지 로딩 성공
+                let image = Image()
+                image.url = urlText
+                self?.images.append(image)
+                self?.imageCollectionView.reloadData()
+              case .failure: // 이미지 로딩 실패
+                self?.presentFailAlert(message: "NotImageURLFail".localized)
+              }
+            }
           } else {
             self?.presentFailAlert(message: "NotImageURLFail".localized)
           }
