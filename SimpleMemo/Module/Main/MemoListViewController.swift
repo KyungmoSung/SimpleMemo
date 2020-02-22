@@ -12,14 +12,22 @@ import RealmSwift
 class MemoListViewController: UIViewController {
   @IBOutlet var memoCollectionView: UICollectionView!
   @IBOutlet var changeGridStyleBarBtn: UIBarButtonItem!
+  @IBOutlet var addMemoBarBtn: UIBarButtonItem!
   
-  var numberOfItemInRow = 3
+  var numberOfItemInRow = 2 {
+    didSet {
+      changeGridStyleBarBtn.image = UIImage(named: "icGrid\(numberOfItemInRow)")
+    }
+  }
   
   var memos: Results<Memo>?
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
+    changeGridStyleBarBtn.tintColor = .smBarButtonItemTint
+    addMemoBarBtn.tintColor = .smBarButtonItemTint
+    
     memoCollectionView.delegate = self
     memoCollectionView.dataSource = self
 

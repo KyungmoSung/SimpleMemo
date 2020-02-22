@@ -50,9 +50,9 @@ class MemoDetailViewController: UIViewController {
     if let memo = memo {
       setupUI(viewType: .detail)
       titleTf.text = memo.title
-      titleTf.textColor = .smTextColor
+      titleTf.textColor = .smText
       contentTv.text = memo.content
-      contentTv.textColor = .smTextColor
+      contentTv.textColor = .smText
 
       images = Array(memo.images)
     } else {
@@ -62,6 +62,7 @@ class MemoDetailViewController: UIViewController {
     titleTf.delegate = self
 
     contentTv.delegate = self
+    contentTv.font = .systemFont(ofSize: 15)
     contentTv.textContainerInset = .zero // textView 상하 padding 제거
     contentTv.textContainer.lineFragmentPadding = 0 // textView 좌우 padding 제거
 
@@ -81,17 +82,17 @@ class MemoDetailViewController: UIViewController {
   /// 뷰 타입에 따라 UI 세팅
   func setupUI(viewType: ViewType) {
     self.viewType = viewType
-    
+
     switch viewType {
     case .detail:
       deleteBarBtn.isEnabled = true
-      deleteBarBtn.tintColor = .black
+      deleteBarBtn.tintColor = .smBarButtonItemTint
       editBarBtn.isEnabled = true
-      editBarBtn.tintColor = .black
+      editBarBtn.tintColor = .smBarButtonItemTint
 
       titleTf.isEnabled = false
       contentTv.isEditable = false
-      
+
       imageContainerView.isHidden = (memo?.images.count ?? 0) == 0
       addBtnContainerView.isHidden = true
     case .edit:
@@ -105,7 +106,7 @@ class MemoDetailViewController: UIViewController {
 
       imageContainerView.isHidden = false
       addBtnContainerView.isHidden = false
-      addBtn.setTitle("Edit".localized, for: .normal)
+      addBtn.setTitle("Complete".localized, for: .normal)
     case .add:
       deleteBarBtn.isEnabled = false
       deleteBarBtn.tintColor = .clear
@@ -199,7 +200,7 @@ extension MemoDetailViewController: UITextViewDelegate {
   func textViewDidBeginEditing(_ textView: UITextView) {
     if textView.textColor == UIColor.smPlaceholder {
       textView.text = nil
-      textView.textColor = .smTextColor
+      textView.textColor = .smText
     }
   }
 

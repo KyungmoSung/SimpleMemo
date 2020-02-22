@@ -45,11 +45,19 @@ extension UIColor {
     }
   }
   
-  static var smTextColor: UIColor {
+  static var smText: UIColor {
     if #available(iOS 13.0, *) {
       return .label
     } else {
       return .darkText
+    }
+  }
+  
+  static var smBarButtonItemTint: UIColor {
+    if #available(iOS 11.0, *) {
+      return UIColor(named: "barButtonItemTint")!
+    } else {
+      return .black
     }
   }
 }

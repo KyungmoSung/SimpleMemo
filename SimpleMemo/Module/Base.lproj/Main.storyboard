@@ -38,20 +38,19 @@
                         <viewLayoutGuide key="safeArea" id="Gsb-5j-GIy"/>
                     </view>
                     <navigationItem key="navigationItem" title="전체 메모" id="Kx0-vQ-kSK">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="compose" id="QjN-9H-w3K">
-                                <connections>
-                                    <segue destination="YDU-2O-yI1" kind="show" id="IBo-7V-E2A"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="bookmarks" id="utT-pT-H5P">
-                                <connections>
-                                    <action selector="didTapChangeGridStyleBarBtn:" destination="Zqr-aC-PNk" id="ILS-IE-Nhw"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" image="icGrid2" id="utT-pT-H5P">
+                            <connections>
+                                <action selector="didTapChangeGridStyleBarBtn:" destination="Zqr-aC-PNk" id="ILS-IE-Nhw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="icAddMemo" id="QjN-9H-w3K">
+                            <connections>
+                                <segue destination="YDU-2O-yI1" kind="show" id="IBo-7V-E2A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addMemoBarBtn" destination="QjN-9H-w3K" id="Nt4-qr-i7k"/>
                         <outlet property="changeGridStyleBarBtn" destination="utT-pT-H5P" id="8za-Wc-CIl"/>
                         <outlet property="memoCollectionView" destination="fdL-d5-3Xy" id="0PG-5L-FlQ"/>
                     </connections>
@@ -60,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="216" y="55"/>
         </scene>
-        <!--메모 작성-->
+        <!--Memo Detail View Controller-->
         <scene sceneID="0QZ-OL-vN1">
             <objects>
                 <viewController storyboardIdentifier="MemoDetailViewController" id="YDU-2O-yI1" customClass="MemoDetailViewController" customModule="SimpleMemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,11 +71,17 @@
                                 <rect key="frame" x="0.0" y="148.5" width="414" height="713.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="P9N-4k-iaK">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="754"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="713.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j91-GO-Xo2">
                                                 <rect key="frame" x="0.0" y="30" width="414" height="55"/>
                                                 <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-He-89y">
+                                                        <rect key="frame" x="20" y="37" width="374" height="18"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKG-eK-X2B">
                                                         <rect key="frame" x="20" y="0.0" width="374" height="27"/>
                                                         <constraints>
@@ -86,12 +91,6 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-He-89y">
-                                                        <rect key="frame" x="20" y="37" width="374" height="18"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
@@ -105,7 +104,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upn-3P-ye3">
-                                                <rect key="frame" x="0.0" y="125" width="414" height="302"/>
+                                                <rect key="frame" x="0.0" y="125" width="414" height="261.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ck-Ud-9gK">
                                                         <rect key="frame" x="20" y="0.0" width="374" height="27"/>
@@ -116,10 +115,10 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="내용을 입력하세요" translatesAutoresizingMaskIntoConstraints="NO" id="eUC-JB-qKG">
-                                                        <rect key="frame" x="20" y="37" width="374" height="265"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="내용을 입력하세요" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUC-JB-qKG">
+                                                        <rect key="frame" x="20" y="37" width="374" height="224.5"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -135,7 +134,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwr-dN-DgN">
-                                                <rect key="frame" x="0.0" y="467" width="414" height="187"/>
+                                                <rect key="frame" x="0.0" y="426.5" width="414" height="187"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5i1-Dm-sSh">
                                                         <rect key="frame" x="20" y="0.0" width="374" height="27"/>
@@ -223,14 +222,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R4t-Q4-G5A"/>
                     </view>
-                    <navigationItem key="navigationItem" title="메모 작성" id="7Br-OO-ZCB">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="7Br-OO-ZCB">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="trash" id="koP-4k-gKd">
                                 <connections>
                                     <action selector="didTapBarBtn:" destination="YDU-2O-yI1" id="LxC-9d-sEA"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="edit" id="hSm-Km-uzB">
+                            <barButtonItem systemItem="compose" id="hSm-Km-uzB">
                                 <connections>
                                     <action selector="didTapBarBtn:" destination="YDU-2O-yI1" id="fFQ-Yo-5fq"/>
                                 </connections>
@@ -269,4 +268,8 @@
             <point key="canvasLocation" x="-575" y="51"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icAddMemo" width="24" height="24"/>
+        <image name="icGrid2" width="24" height="24"/>
+    </resources>
 </document>
