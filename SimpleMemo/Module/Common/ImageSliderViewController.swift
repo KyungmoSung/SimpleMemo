@@ -24,6 +24,8 @@ class ImageSliderViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    view.backgroundColor = .black
+    
     // 스크롤뷰 세팅
     view.addSubview(scrollView)
     scrollView.delegate = self
