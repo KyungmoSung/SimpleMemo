@@ -39,12 +39,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="전체 메모" id="Kx0-vQ-kSK">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" id="QjN-9H-w3K">
+                            <barButtonItem systemItem="compose" id="QjN-9H-w3K">
                                 <connections>
                                     <segue destination="YDU-2O-yI1" kind="show" id="IBo-7V-E2A"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" id="utT-pT-H5P">
+                            <barButtonItem systemItem="bookmarks" id="utT-pT-H5P">
                                 <connections>
                                     <action selector="didTapChangeGridStyleBarBtn:" destination="Zqr-aC-PNk" id="ILS-IE-Nhw"/>
                                 </connections>
@@ -223,11 +223,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R4t-Q4-G5A"/>
                     </view>
-                    <navigationItem key="navigationItem" title="메모 작성" id="7Br-OO-ZCB"/>
+                    <navigationItem key="navigationItem" title="메모 작성" id="7Br-OO-ZCB">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="trash" id="koP-4k-gKd">
+                                <connections>
+                                    <action selector="didTapBarBtn:" destination="YDU-2O-yI1" id="LxC-9d-sEA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="hSm-Km-uzB">
+                                <connections>
+                                    <action selector="didTapBarBtn:" destination="YDU-2O-yI1" id="fFQ-Yo-5fq"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addBtn" destination="t2C-80-y9M" id="sx9-L9-JeV"/>
                         <outlet property="addBtnContainerView" destination="76u-kM-McO" id="J1p-6h-YXp"/>
                         <outlet property="contentTv" destination="eUC-JB-qKG" id="AZH-5d-ZxE"/>
+                        <outlet property="deleteBarBtn" destination="koP-4k-gKd" id="5ik-WA-YU8"/>
+                        <outlet property="editBarBtn" destination="hSm-Km-uzB" id="fWD-rr-Q5H"/>
                         <outlet property="imageCollectionView" destination="1tD-ZA-X2d" id="Jcf-Le-Rd3"/>
+                        <outlet property="imageContainerView" destination="zwr-dN-DgN" id="aFr-Km-PJs"/>
                         <outlet property="titleTf" destination="Hpe-He-89y" id="Os8-yq-3q1"/>
                     </connections>
                 </viewController>
@@ -240,7 +257,7 @@
             <objects>
                 <navigationController id="Brp-dM-xBg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="8P5-Mn-JRT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

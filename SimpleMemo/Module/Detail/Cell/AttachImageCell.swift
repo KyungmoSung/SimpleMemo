@@ -16,6 +16,7 @@ protocol AttachImageCellDelegate: class {
 class AttachImageCell: UICollectionViewCell, ReuseIdentifying {
   @IBOutlet var attachIv: UIImageView!
   @IBOutlet var thumbnailMarkView: DesignableView!
+  @IBOutlet var deleteBtn: UIButton!
   
   weak var delegate: AttachImageCellDelegate?
   var image: Image?
@@ -24,10 +25,11 @@ class AttachImageCell: UICollectionViewCell, ReuseIdentifying {
     super.awakeFromNib()
   }
 
-  func bind(image: Image, isThumbnail: Bool) {
+  func bind(image: Image, isThumbnail: Bool, deletable: Bool) {
     self.image = image
     thumbnailMarkView.isHidden = !isThumbnail
-
+    deleteBtn.isHidden = !deletable
+    
     switch image.type {
     case .data:
       if let imageData = image.data {
