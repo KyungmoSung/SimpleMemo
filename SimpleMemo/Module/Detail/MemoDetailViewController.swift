@@ -10,9 +10,6 @@ import UIKit
 import Nuke
 
 class MemoDetailViewController: UIViewController {
-  private enum Constants {
-    static let placeHolderColor = UIColor.lightGray
-  }
 
   @IBOutlet var titleTf: UITextField!
   @IBOutlet var contentTv: UITextView!
@@ -48,18 +45,16 @@ class MemoDetailViewController: UIViewController {
       }
       
       titleTf.text = memo.title
+      titleTf.textColor = .smTextColor
       contentTv.text = memo.content
-      if #available(iOS 13.0, *) {
-        contentTv.textColor = .label
-      } else {
-        contentTv.textColor = .darkText
-      }
+      contentTv.textColor = .smTextColor
+      
       images = Array(memo.images)
       
       addBtnContainerView.isHidden = true
     case .add:
       contentTv.text = "ConentsLabelPlaceholder".localized
-      contentTv.textColor = .lightGray
+      contentTv.textColor = .smPlaceholder
     }
 
     titleTf.delegate = self
@@ -128,9 +123,9 @@ class MemoDetailViewController: UIViewController {
 extension MemoDetailViewController: UITextViewDelegate {
   /// 내용 편집 시작시  placeholder 제거
   func textViewDidBeginEditing(_ textView: UITextView) {
-    if textView.textColor == UIColor.lightGray {
+    if textView.textColor == UIColor.smPlaceholder {
       textView.text = nil
-      textView.textColor = UIColor.darkGray
+      textView.textColor = .smTextColor
     }
   }
 
@@ -138,7 +133,7 @@ extension MemoDetailViewController: UITextViewDelegate {
   func textViewDidEndEditing(_ textView: UITextView) {
     if textView.text.isEmpty {
       textView.text = "ConentsLabelPlaceholder".localized
-      textView.textColor = UIColor.lightGray
+      textView.textColor = .smPlaceholder
     }
   }
 

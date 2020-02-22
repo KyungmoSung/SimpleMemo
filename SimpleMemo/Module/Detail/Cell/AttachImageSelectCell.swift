@@ -15,7 +15,7 @@ class AttachImageSelectCell: UICollectionViewCell, ReuseIdentifying {
   override func awakeFromNib() {
     super.awakeFromNib()
 
-    designableBackgroundView.backgroundColor = .lightGreyBackground
+    designableBackgroundView.backgroundColor = .smBackground
   }
 
 }

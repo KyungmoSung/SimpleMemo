@@ -21,7 +21,7 @@ class MemoCell: UICollectionViewCell, ReuseIdentifying {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-      containerView.backgroundColor = .lightGreyBackground
+      containerView.backgroundColor = .smBackground
     }
   
   func bind(memo: Memo) {
