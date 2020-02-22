@@ -85,6 +85,7 @@ class MemoDetailViewController: UIViewController {
 
     switch viewType {
     case .detail:
+      title = "MemoDetailTitle".localized
       deleteBarBtn.isEnabled = true
       deleteBarBtn.tintColor = .smBarButtonItemTint
       editBarBtn.isEnabled = true
@@ -96,6 +97,7 @@ class MemoDetailViewController: UIViewController {
       imageContainerView.isHidden = (memo?.images.count ?? 0) == 0
       addBtnContainerView.isHidden = true
     case .edit:
+      title = "MemoEditTitle".localized
       deleteBarBtn.isEnabled = false
       deleteBarBtn.tintColor = .clear
       editBarBtn.isEnabled = false
@@ -108,6 +110,7 @@ class MemoDetailViewController: UIViewController {
       addBtnContainerView.isHidden = false
       addBtn.setTitle("Complete".localized, for: .normal)
     case .add:
+      title = "MemoAddTitle".localized
       deleteBarBtn.isEnabled = false
       deleteBarBtn.tintColor = .clear
       editBarBtn.isEnabled = false

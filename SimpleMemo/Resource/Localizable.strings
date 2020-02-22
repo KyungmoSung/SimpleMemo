@@ -5,6 +5,9 @@
   Created by Kyungmo on 2020/02/22.
   Copyright © 2020 kyungmo. All rights reserved.
 */
+"MemoDetailTitle" = "메모 상세";
+"MemoEditTitle" = "메모 편집";
+"MemoAddTitle" = "메모 작성";
 
 "OK" = "확인";
 "Close" = "닫기";
@@ -12,7 +15,7 @@
 "Fail" = "실패";
 "Delete" = "삭제";
 "Add" = "추가";
-"Edit" = "수정";
+"Complete" = "완료";
 
 "ConentsLabelPlaceholder" = "내용을 입력하세요";
 "TitleEmptyFail" = "제목을 입력해주세요";
