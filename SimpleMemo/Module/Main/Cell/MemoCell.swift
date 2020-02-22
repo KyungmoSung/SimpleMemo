@@ -38,7 +38,7 @@ class MemoCell: UICollectionViewCell, ReuseIdentifying {
       case .url:
         if let imageStringURL = image.url, let imageUrl = URL(string: imageStringURL) {
           let options = ImageLoadingOptions(
-              placeholder: UIImage(named: "placeholder"),
+              placeholder: UIImage(named: "imagePlaceholder"),
               transition: .fadeIn(duration: 0.33)
           )
           Nuke.loadImage(with: imageUrl, options: options, into: thumbnailIv)
