@@ -15,6 +15,7 @@
 		247FD24E23FAE07E00B197DC /* AttachImageSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247FD24C23FAE07E00B197DC /* AttachImageSelectCell.xib */; };
 		247FD25123FAE6AD00B197DC /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD25023FAE6AD00B197DC /* DesignableView.swift */; };
 		247FD25423FAED1B00B197DC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247FD25323FAED1B00B197DC /* Colors.xcassets */; };
+		2490CDC624011242001EA159 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2490CDC524011242001EA159 /* UIStoryboardExtension.swift */; };
 		24B054BB23F7F01000A092F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B054BA23F7F01000A092F8 /* AppDelegate.swift */; };
 		24B054C223F7F01000A092F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B054C023F7F01000A092F8 /* Main.storyboard */; };
 		24B054C423F7F01200A092F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24B054C323F7F01200A092F8 /* Assets.xcassets */; };
@@ -29,7 +30,7 @@
 		24B0551423FA8CB200A092F8 /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551323FA8CB200A092F8 /* MemoListViewController.swift */; };
 		24B0551723FA8ED200A092F8 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551523FA8ED200A092F8 /* MemoCell.swift */; };
 		24B0551823FA8ED200A092F8 /* MemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B0551623FA8ED200A092F8 /* MemoCell.xib */; };
-		24B0551A23FAA7BF00A092F8 /* EditMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551923FAA7BF00A092F8 /* EditMemoViewController.swift */; };
+		24B0551A23FAA7BF00A092F8 /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551923FAA7BF00A092F8 /* MemoDetailViewController.swift */; };
 		2601FDDBBA06F5C328A7BB10 /* libPods-SimpleMemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19ED4DBA032BE74E2F597D5C /* libPods-SimpleMemoTests.a */; };
 		CE4FFD032C75E345326801CD /* libPods-SimpleMemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9BC1ADFFCDE0FC17418397 /* libPods-SimpleMemo.a */; };
 		EFF6EE5DEF41394362397DF3 /* libPods-SimpleMemo-SimpleMemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0571FCCECC3A5158ED459C97 /* libPods-SimpleMemo-SimpleMemoUITests.a */; };
@@ -65,6 +66,7 @@
 		247FD24C23FAE07E00B197DC /* AttachImageSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachImageSelectCell.xib; sourceTree = "<group>"; };
 		247FD25023FAE6AD00B197DC /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		247FD25323FAED1B00B197DC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		2490CDC524011242001EA159 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
 		24B054B723F7F01000A092F8 /* SimpleMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B054BA23F7F01000A092F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24B054C123F7F01000A092F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,7 +93,7 @@
 		24B0551323FA8CB200A092F8 /* MemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
 		24B0551523FA8ED200A092F8 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		24B0551623FA8ED200A092F8 /* MemoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoCell.xib; sourceTree = "<group>"; };
-		24B0551923FAA7BF00A092F8 /* EditMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemoViewController.swift; sourceTree = "<group>"; };
+		24B0551923FAA7BF00A092F8 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
 		908DFC6C9169EDEA401AD8A3 /* Pods-SimpleMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo.release.xcconfig"; path = "Target Support Files/Pods-SimpleMemo/Pods-SimpleMemo.release.xcconfig"; sourceTree = "<group>"; };
 		93D7B55AD4449A1D6AA66353 /* Pods-SimpleMemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMemoTests/Pods-SimpleMemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA82FAC892BE1C82C2B58AB0 /* Pods-SimpleMemo-SimpleMemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo-SimpleMemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMemo-SimpleMemoUITests/Pods-SimpleMemo-SimpleMemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		247FD24223FABC3400B197DC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2490CDC524011242001EA159 /* UIStoryboardExtension.swift */,
 				247FD24323FABC4300B197DC /* UIColorExtension.swift */,
 				247FD24923FADE6300B197DC /* ReuseIdentifying.swift */,
 			);
@@ -159,7 +162,7 @@
 				24B054BA23F7F01000A092F8 /* AppDelegate.swift */,
 				24B054C023F7F01000A092F8 /* Main.storyboard */,
 				2490CDC023FEC1DD001EA159 /* Main */,
-				2490CDC123FEC1E4001EA159 /* Edit */,
+				2490CDC123FEC1E4001EA159 /* Detail */,
 				247FD24F23FAE64300B197DC /* Common */,
 			);
 			path = Module;
@@ -183,13 +186,13 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		2490CDC123FEC1E4001EA159 /* Edit */ = {
+		2490CDC123FEC1E4001EA159 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				24B0551923FAA7BF00A092F8 /* EditMemoViewController.swift */,
+				24B0551923FAA7BF00A092F8 /* MemoDetailViewController.swift */,
 				2490CDC223FEC1F3001EA159 /* Cell */,
 			);
-			path = Edit;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		2490CDC223FEC1F3001EA159 /* Cell */ = {
@@ -547,12 +550,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24B0551A23FAA7BF00A092F8 /* EditMemoViewController.swift in Sources */,
+				24B0551A23FAA7BF00A092F8 /* MemoDetailViewController.swift in Sources */,
 				24B054BB23F7F01000A092F8 /* AppDelegate.swift in Sources */,
 				24B0550923F8063B00A092F8 /* Memo.swift in Sources */,
 				247FD25123FAE6AD00B197DC /* DesignableView.swift in Sources */,
 				24B0550B23F8064400A092F8 /* Image.swift in Sources */,
 				24B0550D23F809BE00A092F8 /* Category.swift in Sources */,
+				2490CDC624011242001EA159 /* UIStoryboardExtension.swift in Sources */,
 				24B0551423FA8CB200A092F8 /* MemoListViewController.swift in Sources */,
 				247FD24A23FADE6300B197DC /* ReuseIdentifying.swift in Sources */,
 				247FD24423FABC4300B197DC /* UIColorExtension.swift in Sources */,
@@ -733,6 +737,7 @@
 			baseConfigurationReference = 0EB6A4DF6143B3320D7C74BF /* Pods-SimpleMemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YV47R3P48P;
 				INFOPLIST_FILE = SimpleMemo/SupportFiles/Info.plist;
@@ -743,6 +748,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kyungmo.SimpleMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -753,6 +759,7 @@
 			baseConfigurationReference = 908DFC6C9169EDEA401AD8A3 /* Pods-SimpleMemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YV47R3P48P;
 				INFOPLIST_FILE = SimpleMemo/SupportFiles/Info.plist;
@@ -763,6 +770,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kyungmo.SimpleMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

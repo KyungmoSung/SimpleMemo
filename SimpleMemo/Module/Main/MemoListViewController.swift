@@ -50,7 +50,11 @@ extension MemoListViewController: UICollectionViewDelegate {
     guard let memo = memos?[indexPath.row] else {
       return
     }
-    print(memo)
+    // 메모 상세 화면으로 이동
+    if let vc: MemoDetailViewController = storyboard?.instantiateVC() {
+      vc.memo = memo
+      navigationController?.pushViewController(vc, animated: true)
+    }
   }
 }
 

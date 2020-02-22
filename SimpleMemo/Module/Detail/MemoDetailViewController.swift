@@ -1,5 +1,5 @@
 //
-//  EditMemoViewController.swift
+//  MemoDetailViewController.swift
 //  SimpleMemo
 //
 //  Created by Kyungmo on 2020/02/17.
@@ -8,22 +8,64 @@
 
 import UIKit
 
-class EditMemoViewController: UIViewController {
+class MemoDetailViewController: UIViewController {
+  private enum Constants {
+    static let placeHolderColor = UIColor.lightGray
+  }
+
   @IBOutlet var titleTf: UITextField!
   @IBOutlet var contentTv: UITextView!
   @IBOutlet var imageCollectionView: UICollectionView!
+  @IBOutlet var addBtnContainerView: UIView!
 
-  var images: [Image] = []
+  enum ViewType {
+    case edit // 수정
+    case add // 추가
+  }
+  var viewType: ViewType = .edit
+
   let imagePicker = UIImagePickerController()
+  var images: [Image] = []
+
+  var memo: Memo?
+
+  var isModified: Bool = false {
+    didSet {
+      addBtnContainerView.isHidden = !isModified
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    viewType = (memo != nil) ? .edit : .add
     
+    switch viewType {
+    case .edit:
+      guard let memo = memo else {
+        return
+      }
+      
+      titleTf.text = memo.title
+      contentTv.text = memo.content
+      if #available(iOS 13.0, *) {
+        contentTv.textColor = .label
+      } else {
+        contentTv.textColor = .darkText
+      }
+      images = Array(memo.images)
+      
+      addBtnContainerView.isHidden = true
+    case .add:
+      contentTv.text = "내용을 입력하세요"
+      contentTv.textColor = .lightGray
+    }
+
+    titleTf.delegate = self
+
     contentTv.delegate = self
     contentTv.textContainerInset = .zero // textView 상하 padding 제거
     contentTv.textContainer.lineFragmentPadding = 0 // textView 좌우 padding 제거
-    contentTv.text = "내용을 입력하세요"
-    contentTv.textColor = UIColor.lightGray
 
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
@@ -45,7 +87,7 @@ class EditMemoViewController: UIViewController {
     alert.addAction(action)
     present(alert, animated: true, completion: nil)
   }
-  
+
   /// 메모 저장
   @IBAction func didTapSaveBtn(_ sender: Any) {
     guard let title = titleTf.text, !title.isEmpty else { // 제목 미입력
@@ -58,20 +100,32 @@ class EditMemoViewController: UIViewController {
       return
     }
 
-    let memo = Memo()
-    memo.title = title
-    memo.content = content
-    memo.images.append(objectsIn: images)
-
-    RealmManager.shared.add([memo])
+    switch viewType {
+    case .edit:
+      guard let memo = memo else {
+        fatalError()
+      }
+      RealmManager.shared.update { [weak self] in
+        memo.title = title
+        memo.content = content
+        memo.images.removeAll()
+        memo.images.append(objectsIn: self?.images ?? [])
+      }
+    case .add:
+      let memo = Memo()
+      memo.title = title
+      memo.content = content
+      memo.images.append(objectsIn: images)
+      RealmManager.shared.add([memo])
+    }
 
     navigationController?.popViewController(animated: true)
   }
 }
 
 // MARK: - UITextViewDelegate
-extension EditMemoViewController: UITextViewDelegate {
-  /// 텍스트 편집 시작시  placeholder 제거
+extension MemoDetailViewController: UITextViewDelegate {
+  /// 내용 편집 시작시  placeholder 제거
   func textViewDidBeginEditing(_ textView: UITextView) {
     if textView.textColor == UIColor.lightGray {
       textView.text = nil
@@ -79,17 +133,31 @@ extension EditMemoViewController: UITextViewDelegate {
     }
   }
 
-  /// 텍스트 편집 종료시 내용이 없으면 placeholder 표시
+  /// 내용 편집 종료시 내용이 없으면 placeholder 표시
   func textViewDidEndEditing(_ textView: UITextView) {
     if textView.text.isEmpty {
       textView.text = "내용을 입력하세요"
       textView.textColor = UIColor.lightGray
     }
   }
+
+  /// 내용 수정
+  func textViewDidChange(_ textView: UITextView) {
+    isModified = true
+  }
+}
+
+// MARK: - UITextFieldDelegate
+extension MemoDetailViewController: UITextFieldDelegate {
+  /// 제목 수정
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    isModified = true
+    return true
+  }
 }
 
 // MARK: - UICollectionViewDataSource
-extension EditMemoViewController: UICollectionViewDataSource {
+extension MemoDetailViewController: UICollectionViewDataSource {
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 2
   }
@@ -128,7 +196,7 @@ extension EditMemoViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-extension EditMemoViewController: UICollectionViewDelegate {
+extension MemoDetailViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     switch indexPath.section {
     case 0: // 등록된 이미지 셀 섹션
@@ -178,7 +246,7 @@ extension EditMemoViewController: UICollectionViewDelegate {
           }
         })
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        
+
         inputAlert.addAction(okAction)
         inputAlert.addAction(cancelAction)
 
@@ -200,7 +268,7 @@ extension EditMemoViewController: UICollectionViewDelegate {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension EditMemoViewController: UICollectionViewDelegateFlowLayout {
+extension MemoDetailViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let value = collectionView.frame.height
     return CGSize(width: value, height: value)
@@ -208,19 +276,20 @@ extension EditMemoViewController: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: - AttachImageCellDelegate
-extension EditMemoViewController: AttachImageCellDelegate {
+extension MemoDetailViewController: AttachImageCellDelegate {
   /// 첨부 이미지셀 삭제시
   func attachImageCell(_ attachImageCell: AttachImageCell, didDeleteImage image: Image) {
     guard let index = images.firstIndex(of: image) else {
       return
     }
     images.remove(at: index)
+    isModified = true
     imageCollectionView.reloadData()
   }
 }
 
 // MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
-extension EditMemoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MemoDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
     var pickedImage: UIImage?
     if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage { // 편집한 이미지가 있는 경우
@@ -230,13 +299,14 @@ extension EditMemoViewController: UIImagePickerControllerDelegate, UINavigationC
     }
 
     if let pickedImage = pickedImage {
-      var image = Image()
+      let image = Image()
       image.data = pickedImage.pngData()
-      
+
       images.append(image)
+      isModified = true
       imageCollectionView.reloadData()
     }
-    
+
     dismiss(animated: true, completion: nil)
   }
 
