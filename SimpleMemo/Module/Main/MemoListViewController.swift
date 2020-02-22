@@ -36,7 +36,7 @@ class MemoListViewController: UIViewController {
   }
 
   override func viewWillAppear(_ animated: Bool) {
-    memos = RealmManager.shared.objects(Memo.self)
+    memos = RealmManager.shared.objects(Memo.self).sorted(byKeyPath: "updateDate", ascending: false)
     memoCollectionView.reloadData()
   }
   

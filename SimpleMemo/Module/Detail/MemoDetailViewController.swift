@@ -184,6 +184,7 @@ class MemoDetailViewController: UIViewController {
       RealmManager.shared.update { [weak self] in
         memo.title = title
         memo.content = content
+        memo.updateDate = Date()
         memo.images.removeAll()
         memo.images.append(objectsIn: self?.images ?? [])
       }
