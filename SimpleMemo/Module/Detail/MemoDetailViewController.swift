@@ -57,7 +57,7 @@ class MemoDetailViewController: UIViewController {
       
       addBtnContainerView.isHidden = true
     case .add:
-      contentTv.text = "내용을 입력하세요"
+      contentTv.text = "ConentsLabelPlaceholder".localized
       contentTv.textColor = .lightGray
     }
 
@@ -82,8 +82,8 @@ class MemoDetailViewController: UIViewController {
 
   /// 정보 미입력 에러 Alert 호출
   func presentFailAlert(message: String) {
-    let alert = UIAlertController(title: "실패", message: message, preferredStyle: .alert)
-    let action = UIAlertAction(title: "닫기", style: .cancel, handler: nil)
+    let alert = UIAlertController(title: "Fail".localized, message: message, preferredStyle: .alert)
+    let action = UIAlertAction(title: "Close".localized, style: .cancel, handler: nil)
     alert.addAction(action)
     present(alert, animated: true, completion: nil)
   }
@@ -91,12 +91,12 @@ class MemoDetailViewController: UIViewController {
   /// 메모 저장
   @IBAction func didTapSaveBtn(_ sender: Any) {
     guard let title = titleTf.text, !title.isEmpty else { // 제목 미입력
-      presentFailAlert(message: "제목을 입력해주세요")
+      presentFailAlert(message: "TitleEmptyFail".localized)
       return
     }
 
     guard let content = contentTv.text else { // 내용 미입력
-      presentFailAlert(message: "내용을 입력해주세요")
+      presentFailAlert(message: "ContentEmptyFail".localized)
       return
     }
 
@@ -136,7 +136,7 @@ extension MemoDetailViewController: UITextViewDelegate {
   /// 내용 편집 종료시 내용이 없으면 placeholder 표시
   func textViewDidEndEditing(_ textView: UITextView) {
     if textView.text.isEmpty {
-      textView.text = "내용을 입력하세요"
+      textView.text = "ConentsLabelPlaceholder".localized
       textView.textColor = UIColor.lightGray
     }
   }
@@ -203,10 +203,10 @@ extension MemoDetailViewController: UICollectionViewDelegate {
       // TODO: 이미지 확대 보여주기
       ()
     case 1: // 이미지 첨부 셀 섹션
-      let alert = UIAlertController(title: "이미지 첨부", message: "첨부 방식을 선택하세요", preferredStyle: .actionSheet)
+      let alert = UIAlertController(title: "AttachImage".localized, message: "SelectAttachType".localized, preferredStyle: .actionSheet)
 
       // 사진첩 선택 액션
-      let albumAction = UIAlertAction(title: "사진첩", style: .default) { [weak self] _ in
+      let albumAction = UIAlertAction(title: "Album".localized, style: .default) { [weak self] _ in
         guard let imagePicker = self?.imagePicker else {
           return
         }
@@ -215,7 +215,7 @@ extension MemoDetailViewController: UICollectionViewDelegate {
       }
 
       // 카메라 선택 액션
-      let cameraAction = UIAlertAction(title: "카메라", style: .default) { [weak self] _ in
+      let cameraAction = UIAlertAction(title: "Camera".localized, style: .default) { [weak self] _ in
         guard let imagePicker = self?.imagePicker else {
           return
         }
@@ -224,13 +224,13 @@ extension MemoDetailViewController: UICollectionViewDelegate {
       }
 
       // 외부링크 선택 액션
-      let urlAction = UIAlertAction(title: "외부 이미지(URL)", style: .default) { _ in
-        let inputAlert = UIAlertController(title: "외부 이미지 첨부", message: "이미지 URL을 입력하세요", preferredStyle: .alert)
+      let urlAction = UIAlertAction(title: "ExternalImage".localized, style: .default) { _ in
+        let inputAlert = UIAlertController(title: "AttachExternalImage".localized, message: "InputImageURL".localized, preferredStyle: .alert)
         inputAlert.addTextField { (textField) in
           textField.placeholder = "https://example.com/image.png"
         }
 
-        let okAction = UIAlertAction(title: "확인", style: .default, handler: { [weak self, weak inputAlert] (_) in
+        let okAction = UIAlertAction(title: "OK".localized, style: .default, handler: { [weak self, weak inputAlert] (_) in
           // 유효한 URL인지 확인
           if let urlText = inputAlert?.textFields?[0].text,
             let url = URL(string: urlText),
@@ -242,10 +242,10 @@ extension MemoDetailViewController: UICollectionViewDelegate {
 
             self?.imageCollectionView.reloadData()
           } else {
-            self?.presentFailAlert(message: "올바른 이미지 URL이 아닙니다")
+            self?.presentFailAlert(message: "NotImageURLFail".localized)
           }
         })
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
 
         inputAlert.addAction(okAction)
         inputAlert.addAction(cancelAction)
@@ -253,7 +253,7 @@ extension MemoDetailViewController: UICollectionViewDelegate {
         self.present(inputAlert, animated: true, completion: nil)
       }
 
-      let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+      let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
 
       alert.addAction(albumAction)
       alert.addAction(cameraAction)

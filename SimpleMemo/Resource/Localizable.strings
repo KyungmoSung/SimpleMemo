@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  SimpleMemo
+
+  Created by Kyungmo on 2020/02/22.
+  Copyright © 2020 kyungmo. All rights reserved.
+*/
+
+"OK" = "확인";
+"Close" = "닫기";
+"Cancel" = "취소";
+"Fail" = "실패";
+
+"ConentsLabelPlaceholder" = "내용을 입력하세요";
+"TitleEmptyFail" = "제목을 입력해주세요";
+"ContentEmptyFail" = "내용을 입력해주세요";
+"NotImageURLFail" = "올바른 이미지 URL이 아닙니다";
+"AttachImage" = "이미지 첨부";
+"SelectAttachType" = "첨부 방식을 선택하세요";
+"Album" = "사진첩";
+"Camera" = "카메라";
+"ExternalImage" = "외부 이미지(URL)";
+"AttachExternalImage" = "외부 이미지 첨부";
+"InputImageURL" = "이미지 URL을 입력하세요";

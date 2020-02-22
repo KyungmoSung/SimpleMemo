@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24355FEB24011FA200E33D0D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24355FEA24011FA200E33D0D /* Localizable.strings */; };
+		24355FED2401202300E33D0D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24355FEC2401202300E33D0D /* StringExtension.swift */; };
 		247FD24423FABC4300B197DC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD24323FABC4300B197DC /* UIColorExtension.swift */; };
 		247FD24723FADA6300B197DC /* AttachImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247FD24523FADA6300B197DC /* AttachImageCell.swift */; };
 		247FD24823FADA6300B197DC /* AttachImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247FD24623FADA6300B197DC /* AttachImageCell.xib */; };
@@ -58,6 +60,8 @@
 		0EB6A4DF6143B3320D7C74BF /* Pods-SimpleMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMemo/Pods-SimpleMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		19ED4DBA032BE74E2F597D5C /* libPods-SimpleMemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleMemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		226D86D58A62030753444857 /* Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SimpleMemo-SimpleMemoUITests/Pods-SimpleMemo-SimpleMemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		24355FEA24011FA200E33D0D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		24355FEC2401202300E33D0D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		247FD24323FABC4300B197DC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		247FD24523FADA6300B197DC /* AttachImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachImageCell.swift; sourceTree = "<group>"; };
 		247FD24623FADA6300B197DC /* AttachImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachImageCell.xib; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				2490CDC524011242001EA159 /* UIStoryboardExtension.swift */,
 				247FD24323FABC4300B197DC /* UIColorExtension.swift */,
 				247FD24923FADE6300B197DC /* ReuseIdentifying.swift */,
+				24355FEC2401202300E33D0D /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			children = (
 				24B054C323F7F01200A092F8 /* Assets.xcassets */,
 				247FD25323FAED1B00B197DC /* Colors.xcassets */,
+				24355FEA24011FA200E33D0D /* Localizable.strings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				247FD24E23FAE07E00B197DC /* AttachImageSelectCell.xib in Resources */,
 				24B054C723F7F01200A092F8 /* LaunchScreen.storyboard in Resources */,
 				24B054C423F7F01200A092F8 /* Assets.xcassets in Resources */,
+				24355FEB24011FA200E33D0D /* Localizable.strings in Resources */,
 				24B0551823FA8ED200A092F8 /* MemoCell.xib in Resources */,
 				247FD25423FAED1B00B197DC /* Colors.xcassets in Resources */,
 				247FD24823FADA6300B197DC /* AttachImageCell.xib in Resources */,
@@ -552,6 +559,7 @@
 			files = (
 				24B0551A23FAA7BF00A092F8 /* MemoDetailViewController.swift in Sources */,
 				24B054BB23F7F01000A092F8 /* AppDelegate.swift in Sources */,
+				24355FED2401202300E33D0D /* StringExtension.swift in Sources */,
 				24B0550923F8063B00A092F8 /* Memo.swift in Sources */,
 				247FD25123FAE6AD00B197DC /* DesignableView.swift in Sources */,
 				24B0550B23F8064400A092F8 /* Image.swift in Sources */,
