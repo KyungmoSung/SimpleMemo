@@ -167,7 +167,7 @@ class MemoDetailViewController: UIViewController {
       return
     }
 
-    guard let content = contentTv.text else { // 내용 미입력
+    guard let content = contentTv.text, !title.isEmpty, contentTv.textColor != .smPlaceholder else { // 내용 미입력
       presentFailAlert(message: "ContentEmptyFail".localized)
       return
     }
