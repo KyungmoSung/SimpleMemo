@@ -14,7 +14,7 @@ class ImageSliderViewController: UIViewController {
 
   var scrollView = UIScrollView()
   var imageStackView = UIStackView()
-  var images: [Image] = []
+  var images: [AttachedImage] = []
   var displayIndex = 0 {
     didSet {
       title = "\(displayIndex + 1) / \(images.count)"

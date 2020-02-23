@@ -34,7 +34,7 @@ class MemoDetailViewController: UIViewController {
   var viewType: ViewType = .detail
 
   let imagePicker = UIImagePickerController()
-  var images: [Image] = []
+  var images: [AttachedImage] = []
 
   var memo: Memo?
 
@@ -315,7 +315,7 @@ extension MemoDetailViewController: UICollectionViewDelegate {
             ImagePipeline.shared.loadImage(with: url) { result in
               switch result {
               case .success: // 이미지 로딩 성공
-                let image = Image()
+                let image = AttachedImage()
                 image.url = urlText
                 self?.images.append(image)
                 self?.imageCollectionView.reloadData()
@@ -360,7 +360,7 @@ extension MemoDetailViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - AttachImageCellDelegate
 extension MemoDetailViewController: AttachImageCellDelegate {
   /// 첨부 이미지셀 삭제시
-  func attachImageCell(_ attachImageCell: AttachImageCell, didDeleteImage image: Image) {
+  func attachImageCell(_ attachImageCell: AttachImageCell, didDeleteImage image: AttachedImage) {
     guard let index = images.firstIndex(of: image) else {
       return
     }
@@ -381,7 +381,7 @@ extension MemoDetailViewController: UIImagePickerControllerDelegate, UINavigatio
     }
 
     if let pickedImage = pickedImage {
-      let image = Image()
+      let image = AttachedImage()
       image.data = pickedImage.pngData()
 
       images.append(image)

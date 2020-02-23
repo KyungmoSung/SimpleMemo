@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Image: Object {
+class AttachedImage: Object {
   @objc dynamic var data: Data? = nil // optionals supported
   @objc dynamic var url: String? = nil
   

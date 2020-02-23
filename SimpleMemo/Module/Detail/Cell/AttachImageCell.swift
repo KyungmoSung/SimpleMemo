@@ -10,7 +10,7 @@ import UIKit
 import Nuke
 
 protocol AttachImageCellDelegate: class {
-  func attachImageCell(_ attachImageCell: AttachImageCell, didDeleteImage image: Image) // 셀 삭제 버튼 클릭시
+  func attachImageCell(_ attachImageCell: AttachImageCell, didDeleteImage image: AttachedImage) // 셀 삭제 버튼 클릭시
 }
 
 class AttachImageCell: UICollectionViewCell, ReuseIdentifying {
@@ -19,13 +19,13 @@ class AttachImageCell: UICollectionViewCell, ReuseIdentifying {
   @IBOutlet var deleteBtn: UIButton!
   
   weak var delegate: AttachImageCellDelegate?
-  var image: Image?
+  var image: AttachedImage?
 
   override func awakeFromNib() {
     super.awakeFromNib()
   }
 
-  func bind(image: Image, isThumbnail: Bool, deletable: Bool) {
+  func bind(image: AttachedImage, isThumbnail: Bool, deletable: Bool) {
     self.image = image
     thumbnailMarkView.isHidden = !isThumbnail
     deleteBtn.isHidden = !deletable

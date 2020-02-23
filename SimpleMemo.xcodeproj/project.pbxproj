@@ -26,7 +26,7 @@
 		24B054D223F7F01300A092F8 /* SimpleMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B054D123F7F01300A092F8 /* SimpleMemoTests.swift */; };
 		24B054DD23F7F01300A092F8 /* SimpleMemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B054DC23F7F01300A092F8 /* SimpleMemoUITests.swift */; };
 		24B0550923F8063B00A092F8 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0550823F8063B00A092F8 /* Memo.swift */; };
-		24B0550B23F8064400A092F8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0550A23F8064400A092F8 /* Image.swift */; };
+		24B0550B23F8064400A092F8 /* AttachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0550A23F8064400A092F8 /* AttachedImage.swift */; };
 		24B0550D23F809BE00A092F8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0550C23F809BE00A092F8 /* Category.swift */; };
 		24B0550F23F812C700A092F8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 24B0550E23F812C700A092F8 /* .swiftlint.yml */; };
 		24B0551223F813D200A092F8 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B0551123F813D200A092F8 /* RealmManager.swift */; };
@@ -93,7 +93,7 @@
 		24B0550123F7FFB100A092F8 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B0550323F8001B00A092F8 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B0550823F8063B00A092F8 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
-		24B0550A23F8064400A092F8 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		24B0550A23F8064400A092F8 /* AttachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachedImage.swift; sourceTree = "<group>"; };
 		24B0550C23F809BE00A092F8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		24B0550E23F812C700A092F8 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		24B0551123F813D200A092F8 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				24B0550823F8063B00A092F8 /* Memo.swift */,
-				24B0550A23F8064400A092F8 /* Image.swift */,
+				24B0550A23F8064400A092F8 /* AttachedImage.swift */,
 				24B0550C23F809BE00A092F8 /* Category.swift */,
 			);
 			path = Models;
@@ -569,7 +569,7 @@
 				24B0550923F8063B00A092F8 /* Memo.swift in Sources */,
 				24BCD7192401B33C000440F2 /* UIViewControllerExtension.swift in Sources */,
 				247FD25123FAE6AD00B197DC /* DesignableView.swift in Sources */,
-				24B0550B23F8064400A092F8 /* Image.swift in Sources */,
+				24B0550B23F8064400A092F8 /* AttachedImage.swift in Sources */,
 				24B0550D23F809BE00A092F8 /* Category.swift in Sources */,
 				2490CDC624011242001EA159 /* UIStoryboardExtension.swift in Sources */,
 				24B0551423FA8CB200A092F8 /* MemoListViewController.swift in Sources */,
@@ -798,6 +798,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YV47R3P48P;
 				INFOPLIST_FILE = SimpleMemoTests/Info.plist;
@@ -807,6 +808,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = kyungmo.SimpleMemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -821,6 +823,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YV47R3P48P;
 				INFOPLIST_FILE = SimpleMemoTests/Info.plist;
@@ -830,6 +833,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = kyungmo.SimpleMemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
