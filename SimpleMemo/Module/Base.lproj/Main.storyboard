@@ -39,11 +39,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="전체 메모" id="Kx0-vQ-kSK">
                         <barButtonItem key="leftBarButtonItem" image="icGrid2" id="utT-pT-H5P">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityEnabled" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabelText" value="gridBtn"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="didTapChangeGridStyleBarBtn:" destination="Zqr-aC-PNk" id="ILS-IE-Nhw"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icAddMemo" id="QjN-9H-w3K">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityEnabled" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabelText" value="addBtn"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <segue destination="YDU-2O-yI1" kind="show" id="IBo-7V-E2A"/>
                             </connections>
@@ -78,6 +86,7 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-He-89y">
                                                         <rect key="frame" x="20" y="37" width="374" height="18"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="titleTf"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -117,6 +126,7 @@
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="내용을 입력하세요" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUC-JB-qKG">
                                                         <rect key="frame" x="20" y="37" width="374" height="224.5"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="contentTv"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -189,6 +199,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2C-80-y9M">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="saveBtn"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="RDO-FA-Xkn"/>
                                         </constraints>
@@ -225,11 +236,19 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="7Br-OO-ZCB">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="trash" id="koP-4k-gKd">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabelText" value="deleteBtn"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapBarBtn:" destination="YDU-2O-yI1" id="LxC-9d-sEA"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="compose" id="hSm-Km-uzB">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="accessibilityEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabelText" value="editBtn"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapBarBtn:" destination="YDU-2O-yI1" id="fFQ-Yo-5fq"/>
                                 </connections>
@@ -256,7 +275,7 @@
             <objects>
                 <navigationController id="Brp-dM-xBg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="8P5-Mn-JRT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>

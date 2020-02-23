@@ -7,35 +7,57 @@
 //
 
 import XCTest
+@testable import SimpleMemo
 
 class SimpleMemoUITests: XCTestCase {
+  var app: XCUIApplication!
+  
+  override func setUp() {
+    super.setUp()
+    
+    continueAfterFailure = false
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    app = XCUIApplication()
+  }
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+  override func tearDown() {
+    super.tearDown()
+  }
+
+  func testMemoList() {
+    app.launch()
+
+    for _ in 0 ..< 3 {
+      app.buttons["gridBtn"].tap()
     }
+  }
+  
+  func testAddMemo() {
+    app.launch()
+    app.buttons["addBtn"].tap()
+    
+    XCTAssertFalse(app.buttons["editBtn"].exists)
+    XCTAssertFalse(app.buttons["deleteBtn"].exists)
+    XCTAssertTrue(app.buttons["saveBtn"].exists)
+    
+    let titleTf = app.textFields["titleTf"]
+    titleTf.tap()
+    titleTf.typeText("Test title")
+    
+    let contentTv = app.textViews["contentTv"]
+    contentTv.tap()
+    contentTv.typeText("Test content")
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+    let imageCollectionView = app.collectionViews["imageCollectionView"]
+    let cell = imageCollectionView.cells.element(matching: .cell, identifier: "attachImageSelectCell_0")
+    cell.tap()
+    
+    app.buttons["외부 이미지(URL)"].tap()
+    let imageUrlTf = app.textFields["imageUrlTf"]
+    imageUrlTf.tap()
+    imageUrlTf.typeText("https://kyungmosung.github.io/img/avatar.jpg")
+    app.buttons["확인"].tap()
+    
+    app.buttons["추가"].tap()
+  }
 }

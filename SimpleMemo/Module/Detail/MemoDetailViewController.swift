@@ -71,6 +71,7 @@ class MemoDetailViewController: UIViewController {
 
     imageCollectionView.dataSource = self
     imageCollectionView.delegate = self
+    imageCollectionView.accessibilityIdentifier = "imageCollectionView"
 
     let attachImageCellNib = UINib(nibName: AttachImageCell.nibName, bundle: nil)
     imageCollectionView.register(attachImageCellNib, forCellWithReuseIdentifier: AttachImageCell.reuseIdentifier)
@@ -265,6 +266,7 @@ extension MemoDetailViewController: UICollectionViewDataSource {
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AttachImageSelectCell.reuseIdentifier, for: indexPath) as? AttachImageSelectCell else {
         fatalError()
       }
+      cell.accessibilityIdentifier = "attachImageSelectCell_\(indexPath.row)"
       return cell
     default:
       fatalError()
@@ -307,6 +309,7 @@ extension MemoDetailViewController: UICollectionViewDelegate {
         let inputAlert = UIAlertController(title: "AttachExternalImage".localized, message: "InputImageURL".localized, preferredStyle: .alert)
         inputAlert.addTextField { (textField) in
           textField.placeholder = "https://example.com/image.png"
+          textField.accessibilityIdentifier = "imageUrlTf"
         }
 
         let okAction = UIAlertAction(title: "OK".localized, style: .default, handler: { [weak self, weak inputAlert] (_) in
